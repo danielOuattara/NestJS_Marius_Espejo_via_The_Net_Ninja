@@ -10,7 +10,15 @@ import { ResourcesWebsocketsModule } from './resources_websockets/resources_webs
 import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [NinjasModule, ResourcesRestApiModule, ResourcesGraphqlCodeFirstModule, ResourcesGraphqlSchemaFirstModule, ResourcesMicroservicesNonHttpModule, ResourcesWebsocketsModule, UsersModule],
+  imports: [
+    NinjasModule,
+    ResourcesRestApiModule,
+    ResourcesGraphqlCodeFirstModule,
+    ResourcesGraphqlSchemaFirstModule,
+    ResourcesMicroservicesNonHttpModule,
+    ResourcesWebsocketsModule,
+    UsersModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
