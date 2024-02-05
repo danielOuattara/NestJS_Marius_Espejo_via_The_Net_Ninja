@@ -3,7 +3,7 @@ import { NinjasService } from './ninjas.service';
 import { NinjasController } from './ninjas.controller';
 
 @Module({
-  providers: [NinjasService],
   controllers: [NinjasController],
+  providers: [NinjasService],
 })
 export class NinjasModule {}

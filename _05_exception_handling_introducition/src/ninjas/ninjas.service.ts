@@ -1,15 +1,15 @@
 import { Injectable } from '@nestjs/common';
-import { CreateNinjaDto } from './dto/create-ninja.dto';
+import { CreateNinjaDto, ENUM_WEAPON } from './dto/create-ninja.dto';
 import { UpdateNinjaDto } from './dto/update-ninja.dto';
 
 @Injectable()
 export class NinjasService {
   private ninjas: CreateNinjaDto[] = [
-    { ninjaId: 0, name: 'ninja0', weapon: 'stars' },
-    { ninjaId: 1, name: 'ninja1', weapon: 'sword' },
+    { ninjaId: 0, name: 'ninja0', weapon: ENUM_WEAPON.STARS },
+    { ninjaId: 1, name: 'ninja1', weapon: ENUM_WEAPON.SWORDS },
   ];
 
-  findAllNinjas(weapon?: string) {
+  findAllNinjas(weapon?: ENUM_WEAPON) {
     if (weapon) {
       return this.ninjas.filter((ninja) => ninja.weapon === weapon);
     }

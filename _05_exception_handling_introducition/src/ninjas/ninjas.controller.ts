@@ -10,7 +10,7 @@ import {
   Put,
   Query,
 } from '@nestjs/common';
-import { CreateNinjaDto } from './dto/create-ninja.dto';
+import { CreateNinjaDto, ENUM_WEAPON } from './dto/create-ninja.dto';
 import { NinjasService } from './ninjas.service';
 // import { UpdateNinjaDto } from './dto/update-ninja.dto';
 
@@ -19,7 +19,7 @@ export class NinjasController {
   constructor(private readonly ninjasService: NinjasService) {}
 
   @Get()
-  findAllNinjas(@Query('weapon') weapon?: string) {
+  findAllNinjas(@Query('weapon') weapon?: ENUM_WEAPON) {
     try {
       return this.ninjasService.findAllNinjas(weapon);
     } catch (error) {
